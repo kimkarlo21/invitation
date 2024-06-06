@@ -33,7 +33,7 @@
 				<div class="content">
 					<style>
 						@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
-				
+
 						body {
 							background-color: #f8f9fa;
 							color: #333;
@@ -42,16 +42,31 @@
 							padding: 50px;
 							margin: 0;
 						}
-				
+
 						h1 {
 							font-size: 48px;
 							font-weight: 700;
-							text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Increase the blur radius for a more intense shadow */
+							text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+							margin: 10px 0;
 						}
-				
+
 						p {
 							font-size: 24px;
 							font-weight: 400;
+						}
+
+						@media (max-width: 768px) {
+							h1 {
+								font-size: 36px;
+								margin: 5px 0;
+							}
+						}
+
+						@media (max-width: 480px) {
+							h1 {
+								font-size: 28px;
+								margin: 5px 0;
+							}
 						}
 					</style>
 				</head>
@@ -61,8 +76,8 @@
 						<p>You are cordially invited to celebrate our special day.</p>
 					</header>
 					<p>Join Us for Love & Laughter:</p>
-					<h1>Mikka & Kim's Wedding</h1>
-				</body>
+					<div class="wedding-title">
+						<h1>Mikka & Kim's Wedding</h1>
 				</html>
 					<footer>
 						<a href="#one" class="button style2 down">More</a>
