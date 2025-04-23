@@ -14,6 +14,11 @@
 	</head>
 	<body class="is-preload">
 
+		<audio id="bg-music" loop>
+			<source src="audio/music.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+
 		<!-- Header -->
 			<header id="header">
 				<!--<h1>KMMK</h1>-->
@@ -338,6 +343,25 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+		<script>
+			let musicStarted = false;
+			
+			function playMusicOnScroll() {
+				if (!musicStarted) {
+				const audio = document.getElementById('bg-music');
+				audio.play().then(() => {
+					musicStarted = true;
+					window.removeEventListener('scroll', playMusicOnScroll);
+				}).catch((e) => {
+					console.log('Playback prevented:', e);
+				});
+				}
+			}
+			
+			window.addEventListener('scroll', playMusicOnScroll);
+		</script>
+			
 
 	</body>
 </html>
