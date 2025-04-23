@@ -6,18 +6,13 @@
 -->
 <html>
 	<head>
-		<title>Kim and Mikka Wedding Invitation</title>
+		<title>Kim and Mikka's Wedding Invitation</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
-
-		<audio id="bg-music" loop>
-			<source src="audio/music.mp3" type="audio/mpeg">
-			Your browser does not support the audio element.
-		</audio>
 
 		<!-- Header -->
 			<header id="header">
@@ -83,6 +78,53 @@
 					<p>Join Us for Love & Laughter ---</p>
 					<div class="wedding-title">
 						<h1>Kim & Mikka's Wedding</h1>
+					<div id="countdown" style="font-family: sans-serif; font-size: 2rem; color: white; margin-top: 40px; text-align: center;">
+						Loading countdown...
+						</div>
+						
+						<script>
+						const targetDate = new Date("2025-12-31T00:00:00").getTime(); // Update this as needed
+						
+						function updateCountdown() {
+							const now = new Date().getTime();
+							const distance = targetDate - now;
+						
+							if (distance <= 0) {
+							document.getElementById("countdown").innerHTML = "Event started!";
+							return;
+							}
+						
+							const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+							const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+							const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+							const secs = Math.floor((distance % (1000 * 60)) / 1000);
+						
+							document.getElementById("countdown").innerHTML = `
+							<div style="display: flex; justify-content: center; gap: 20px;">
+								<div>
+								<div>${days}</div>
+								<div style="font-size: 1rem;">Days</div>
+								</div>
+								<div>
+								<div>${hours}</div>
+								<div style="font-size: 1rem;">Hours</div>
+								</div>
+								<div>
+								<div>${mins}</div>
+								<div style="font-size: 1rem;">Mins</div>
+								</div>
+								<div>
+								<div style="color: red;">${secs}</div>
+								<div style="font-size: 1rem;">Seconds</div>
+								</div>
+							</div>
+							`;
+						}
+						
+						setInterval(updateCountdown, 1000);
+						updateCountdown();
+					</script>
+						  
 				</html>
 					<!--<footer>
 						<a href="#one" class="button style2 down">More</a>
@@ -343,25 +385,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			
-		<script>
-			let musicStarted = false;
-			
-			function playMusicOnScroll() {
-				if (!musicStarted) {
-				const audio = document.getElementById('bg-music');
-				audio.play().then(() => {
-					musicStarted = true;
-					window.removeEventListener('scroll', playMusicOnScroll);
-				}).catch((e) => {
-					console.log('Playback prevented:', e);
-				});
-				}
-			}
-			
-			window.addEventListener('scroll', playMusicOnScroll);
-		</script>
-			
 
 	</body>
 </html>
