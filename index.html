@@ -212,7 +212,7 @@
 			#header {
 				background-color: #f6f1f1;
 				padding: 10px 0;
-				border-bottom: 1px solid #ccc;
+				border-bottom: 1px solid #f6f1f1;
 			}
 	
 			#header nav ul {
@@ -407,13 +407,50 @@
 						</form>
 					</div
 					>-->
+					<head>
+						<meta charset="UTF-8">
+						<meta name="viewport" content="width=device-width, initial-scale=1.0">
+						<title>Responsive Video</title>
+						<style>
+							/* Set up a container for the video */
+							.video-container {
+								width: 100%;
+								display: flex;
+								justify-content: center;  /* Centers the video horizontally */
+								padding-top: 50px;  /* Optional: space from top */
+							}
+					
+							video {
+								width: 100%;
+								max-width: 600px; /* Set maximum width */
+								height: auto;     /* Maintain aspect ratio */
+							}
+					
+							/* Media Query for Small Screens (less than 600px) */
+							@media (max-width: 600px) {
+								video {
+									width: 100%;   /* Make video fit the screen width */
+									max-width: 100%; /* Ensure it doesn't exceed the screen width */
+								}
+							}
+						</style>
+					</head>
 					<body>
-						<!--<h1>Sample Video</h1>-->
-						<video width="600" controls>
-							<source src="videos/video.mp4" type="video/mp4">
-							<!--<source src="video.ogg" type="video/ogg">-->
-							Your browser does not support the video tag.
-						</video>
+					
+						<!-- Video Container -->
+						<div class="video-container">
+							<video controls>
+								<source src="videos/video.mp4" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>
+						</div>
+					
+						<!-- Example of additional content that won't be affected by the video styles -->
+						<!-- <div>
+							<h1>Some other content</h1>
+							<p>This content will not be affected by the video styling.</p>
+						</div> -->
+					
 					</body>
 				</div>
 			</section>
