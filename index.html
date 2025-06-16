@@ -7,14 +7,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Libre+Baskerville:wght@400;700&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
   <style>
   :root {
-    --primary-color: #8b5e3c;
-    --secondary-color: #5a3e36;
-    --accent-color: #d4af37;
-    --light-bg: #fffaf7;
-    --text-color: #4b3c36;
-    --glass-bg: rgba(255, 255, 255, 0.15);
-    --shadow-light: 0 8px 32px rgba(139, 94, 60, 0.1);
-    --shadow-medium: 0 12px 40px rgba(139, 94, 60, 0.2);
+    --primary-color: #800000; /* Deep Maroon */
+    --secondary-color: #4b1c1c; /* Darker Maroon for contrast */
+    --accent-color: #2b2b2b; /* Soft blush pink for elegant highlights */
+    --light-bg: #fff5f7; /* Light rose-tinted background */
+    --text-color: #3e1f1f; /* Warm dark for readability */
+    --glass-bg: rgba(255, 240, 245, 0.12); /* Subtle romantic glass effect */
+    --shadow-light: 0 8px 32px rgba(128, 0, 0, 0.08); /* Light maroon shadow */
+    --shadow-medium: 0 12px 40px rgba(128, 0, 0, 0.15); /* Richer maroon shadow */
   }
 
   * {
@@ -25,7 +25,7 @@
 
   body {
     font-family: 'Libre Baskerville', serif;
-    background: linear-gradient(135deg, #fffaf7 0%, #f5f0eb 50%, #ede4dd 100%);
+    background: linear-gradient(135deg, #cccccc 0%, #f5f0eb 50%, #ede4dd 100%);
     background-attachment: fixed;
     color: var(--text-color);
     line-height: 1.6;
@@ -286,7 +286,7 @@
     left: 15px;
     right: 15px;
     bottom: 15px;
-    background: linear-gradient(45deg, rgba(139, 94, 60, 0.8), rgba(212, 175, 55, 0.8));
+    background: linear-gradient(45deg, rgba(139, 60, 86, 0.8), rgba(212, 55, 55, 0.8));
     border-radius: 15px;
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -319,9 +319,10 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(112, 53, 53, 0.1) 0%, transparent 70%);
     transition: opacity 0.3s ease;
     opacity: 0;
+    pointer-events: none;
   }
 
   .venue-card:hover::before {
@@ -613,7 +614,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
+    background: linear-gradient(90deg, transparent, rgba(139, 32, 32, 0.8), transparent);
     animation: glitterMove 3s infinite;
   }
 
@@ -726,19 +727,57 @@
     <h2>Frequently Asked Questions</h2>
     <div class="faq-item">
       <div class="faq-question">What should I wear?</div>
-      <div class="faq-answer">Feel free to dress semi-formal or in earth tones for the outdoor venue. Think garden party elegance!</div>
+      <div class="faq-answer">Feel free to dress semi-formal in shades of brown and gray tones.</div>
     </div>
+
     <div class="faq-item">
       <div class="faq-question">Can I bring a guest?</div>
-      <div class="faq-answer">Please check with us directly if your invitation includes a plus-one. We want to ensure everyone has a wonderful time!</div>
+      <div class="faq-answer">Please check with us directly to confirm if your invitation includes a plus-one. We want to ensure that everyone has a great time!</div>
     </div>
+
     <div class="faq-item">
       <div class="faq-question">Will there be parking available?</div>
-      <div class="faq-answer">Yes, both venues have ample parking space for all our guests.</div>
+      <div class="faq-answer">Yes, both venues offer adequate parking space for all of our guests.</div>
     </div>
+
     <div class="faq-item">
       <div class="faq-question">What time should I arrive?</div>
-      <div class="faq-answer">Please arrive 15-30 minutes before the ceremony begins to find your seats and enjoy the pre-ceremony music.</div>
+      <div class="faq-answer">Please arrive 15-30 minutes before the ceremony begins to find your seat and enjoy the pre-ceremony music.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Is the venue indoors or outdoors?</div>
+      <div class="faq-answer">The ceremony will take place indoors.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Will there be food and drinks?</div>
+      <div class="faq-answer">Yes, we’ll have a selection of delicious food and drinks throughout the event. Come hungry and thirsty!</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Are children invited?</div>
+      <div class="faq-answer">While we love little ones, this is an adults-only celebration. We hope you understand!</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">What happens if it rains?</div>
+      <div class="faq-answer">The venue is indoors, so rain won’t affect the celebration.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Can I take photos during the ceremony?</div>
+      <div class="faq-answer">We kindly ask that you leave the photography to our professional photographer during the ceremony. However, feel free to take photos during the reception!</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Do I need to RSVP?</div>
+      <div class="faq-answer">Yes! Please confirm your attendance through the RSVP link in the invitation.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Where can I find the event details (date, time, location)?</div>
+      <div class="faq-answer">For event details, please refer to this e-invitation page for the date, time, and location of the celebration.</div>
     </div>
   </div>
 
@@ -746,9 +785,10 @@
   <div class="section">
     <h2>Get in Touch</h2>
     <p style="font-size: 1.1rem; line-height: 1.8;">
-      For questions, special accommodations, or just to share in our excitement, 
+      If you have any questions or need clarification, feel free to reach out to us via our FB messenger.
+      <!-- For questions, special accommodations, or just to share in our excitement, 
       feel free to reach out to us via <a href="mailto:kimandmikka@example.com" style="color: var(--accent-color); font-weight: 600;">email</a> 
-      or connect with us on social media.
+      or connect with us on social media. -->
     </p>
   </div>
 
@@ -844,7 +884,7 @@
       ],
       invitations: [
         { src: "invitation_1.png", alt: "Invitation 1" },
-        { src: "invitation_2.png", alt: "Invitation 2" },
+        // { src: "invitation_2.png", alt: "Invitation 2" },
         { src: "invitation_3.png", alt: "Invitation 3" }
       ]
     };
