@@ -626,7 +626,22 @@
   }
   </style>
 </head>
+
 <body>
+<!-- <body style="display:none;">
+  <script>
+    const password = "***ddd";
+    const input = prompt("Enter the invitation password:");
+
+    if (input === password) {
+      // Show page content
+      document.body.style.display = "block";
+    } else {
+      alert("Access denied.");
+      document.body.innerHTML = "<h2>Sorry, this invitation is private.</h2>";
+    }
+  </script> -->
+
   <!-- Floating Particles -->
   <div class="particles" id="particles"></div>
 
@@ -661,7 +676,7 @@
   </div>
 
   <!-- Photo Gallery Section -->
-  <div class="section">
+  <!-- <div class="section">
     <h2>Our Journey Together</h2>
     <div class="gallery-container">
       <div class="gallery-item" data-gallery="photos" data-index="0">
@@ -670,7 +685,7 @@
       </div>
     </div>
     <p style="margin-top: 20px; font-style: italic; color: var(--secondary-color);">Capturing moments of love and joy</p>
-  </div>
+  </div> -->
 
   <!-- Wedding Ceremony -->
   <div class="section">
