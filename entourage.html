@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entourage Guide — Kim & Mikka's Wedding</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Libre+Baskerville:wght@400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Libre Baskerville', serif;
+      background: linear-gradient(135deg, #faf8f5 0%, #f5f1eb 100%);
+      color: #4b4b4b;
+      min-height: 100vh;
+      padding: 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Floating hearts animation */
+    .hearts {
+      position: fixed;
+      top: -10%;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      overflow: hidden;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      color: rgba(139, 94, 60, 0.1);
+      font-size: 20px;
+      animation: float 15s infinite linear;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Header with gradient text */
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      background: linear-gradient(45deg, #8b5e3c, #d4a574, #8b5e3c);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: center;
+      margin-bottom: 10px;
+      animation: shimmer 3s ease-in-out infinite;
+      text-shadow: 0 4px 8px rgba(139, 94, 60, 0.3);
+    }
+
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    h2 {
+      text-align: center;
+      color: #a67c52;
+      font-weight: 400;
+      margin-bottom: 40px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.3rem;
+      animation: fadeInUp 1s ease-out 0.5s both;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 50px;
+      box-shadow: 0 20px 60px rgba(139, 94, 60, 0.15), 
+                  0 0 0 1px rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(139, 94, 60, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #8b5e3c, #d4a574, #8b5e3c);
+      background-size: 200% 100%;
+      animation: slide 3s ease-in-out infinite;
+    }
+
+    @keyframes slide {
+      0%, 100% { background-position: 200% 0; }
+      50% { background-position: -200% 0; }
+    }
+
+    section {
+      margin-bottom: 60px;
+      animation: fadeSlideIn 0.8s ease-out both;
+      position: relative;
+      padding: 25px;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    section:hover {
+      background: rgba(139, 94, 60, 0.02);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(139, 94, 60, 0.1);
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h3 {
+      color: #8b5e3c;
+      border-bottom: 3px solid transparent;
+      background: linear-gradient(90deg, #d9c9b3, transparent) bottom / 100% 3px no-repeat;
+      padding-bottom: 8px;
+      margin-bottom: 25px;
+      font-size: 2rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    h3::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, #d9c9b3, transparent);
+      margin-left: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    li:hover {
+      background: rgba(139, 94, 60, 0.05);
+      transform: translateX(10px);
+    }
+
+    .icon {
+      font-size: 1.5rem;
+      margin-right: 15px;
+      line-height: 1.6;
+      flex-shrink: 0;
+      background: linear-gradient(45deg, #8b5e3c, #d4a574);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+      margin-left: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-link {
+      background: linear-gradient(45deg, #8b5e3c, #a6794a);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(139, 94, 60, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-link:hover::before {
+      left: 100%;
+    }
+
+    .btn-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(139, 94, 60, 0.4);
+    }
+
+    .btn-back {
+      display: block;
+      margin: 50px auto 0;
+      padding: 15px 30px;
+      border: 3px solid #8b5e3c;
+      border-radius: 50px;
+      text-align: center;
+      color: #8b5e3c;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-back::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: #8b5e3c;
+      border-radius: 50%;
+      transition: all 0.4s ease;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    .btn-back:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn-back:hover {
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(139, 94, 60, 0.3);
+    }
+
+    /* Timeline Box Styling */
+    .timeline-box {
+      background: linear-gradient(145deg, #fff 0%, #faf8f5 100%);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 20px 0;
+      box-shadow: 0 10px 30px rgba(139, 94, 60, 0.15);
+      border: 2px solid rgba(139, 94, 60, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #8b5e3c, #d4a574, #8b5e3c);
+      border-radius: 20px 20px 0 0;
+    }
+
+    .timeline-header {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #8b5e3c;
+      text-align: center;
+      margin-bottom: 25px;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 15px;
+      background: rgba(139, 94, 60, 0.03);
+      border-radius: 12px;
+      border-left: 4px solid #d4a574;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .timeline-item:hover {
+      transform: translateX(5px);
+      background: rgba(139, 94, 60, 0.08);
+      box-shadow: 0 5px 15px rgba(139, 94, 60, 0.1);
+    }
+
+    .time {
+      font-weight: 700;
+      color: #8b5e3c;
+      min-width: 80px;
+      font-size: 1.1rem;
+      margin-right: 20px;
+    }
+
+    .activity {
+      color: #4b4b4b;
+      font-weight: 500;
+      flex: 1;
+    }
+
+    /* Final Reminders Styling */
+    .final-reminders {
+      background: linear-gradient(145deg, #fff 0%, #faf8f5 100%);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 20px 0;
+      box-shadow: 0 10px 30px rgba(139, 94, 60, 0.15);
+      border: 2px solid rgba(139, 94, 60, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-reminders::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #d4a574, #8b5e3c, #d4a574);
+      border-radius: 20px 20px 0 0;
+    }
+
+    .reminder-header {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #8b5e3c;
+      text-align: center;
+      margin-bottom: 25px;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .reminder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .reminder-item {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: rgba(139, 94, 60, 0.03);
+      border-radius: 15px;
+      border: 1px solid rgba(139, 94, 60, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .reminder-item:hover {
+      transform: translateY(-3px);
+      background: rgba(139, 94, 60, 0.08);
+      box-shadow: 0 8px 25px rgba(139, 94, 60, 0.15);
+    }
+
+    .reminder-icon {
+      font-size: 2rem;
+      margin-right: 15px;
+      animation: bounce 2s infinite;
+    }
+
+    .reminder-text {
+      color: #4b4b4b;
+      font-weight: 500;
+      flex: 1;
+      line-height: 1.4;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-5px);
+      }
+      60% {
+        transform: translateY(-3px);
+      }
+    }
+
+    /* Special effects for different sections */
+    .guidelines {
+      animation-delay: 0.2s;
+    }
+
+    .bridesmaids {
+      animation-delay: 0.4s;
+      position: relative;
+    }
+
+    .bridesmaids::before {
+      content: '💐';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-size: 2rem;
+      opacity: 0.3;
+      animation: rotate 10s linear infinite;
+    }
+
+    .groomsmen {
+      animation-delay: 0.6s;
+      position: relative;
+    }
+
+    .groomsmen::before {
+      content: '🎩';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-size: 2rem;
+      opacity: 0.3;
+      animation: rotate 10s linear infinite reverse;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Interactive sparkles on hover */
+    .sparkle {
+      position: absolute;
+      pointer-events: none;
+      color: #d4a574;
+      font-size: 12px;
+      animation: sparkleAnim 1s ease-out forwards;
+    }
+
+    @keyframes sparkleAnim {
+      0% {
+        opacity: 1;
+        transform: scale(0) rotate(0deg);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1) rotate(180deg);
+      }
+    }
+
+    @media (max-width: 500px) {
+      h1 { font-size: 3rem; }
+      h3 { font-size: 1.6rem; }
+      .container { padding: 30px; }
+      .btn-group { margin-left: 1.5rem; }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 25px;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .timeline-header,
+        .reminder-header {
+            font-size: 1.2rem;
+        }
+
+        .timeline-item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .time {
+            margin-bottom: 5px;
+        }
+
+        .reminder-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .btn-group {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 0;
+        }
+
+        .btn-link {
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-back {
+            width: 100%;
+            font-size: 1rem;
+            padding: 12px 0;
+        }
+
+        li {
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 10px;
+        }
+
+        .icon {
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+
+        .reminder-item {
+            padding: 15px;
+        }
+
+        .reminder-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating hearts background -->
+  <div class="hearts"></div>
+
+  <h1>Kim & Mikka</h1>
+  <h2>✨ Entourage Announcement & Guide ✨</h2>
+  <div class="container">
+
+    <section class="guidelines">
+      <h3>📋 Important Schedule & Guidelines</h3>
+      
+      <div class="timeline-box">
+        <div class="timeline-header">📅 Wedding Day Preparation Timeline</div>
+        <div class="timeline-item">
+          <div class="time">5:00 AM</div>
+          <div class="activity">All entourage arrival</div>
+        </div>
+        <div class="timeline-item">
+          <div class="time">5:30 AM</div>
+          <div class="activity">Breakfast</div>
+        </div>
+        <div class="timeline-item">
+          <div class="time">6:00 AM</div>
+          <div class="activity">Preparation & photo shoot begins</div>
+        </div>
+        <div class="timeline-item">
+          <div class="time">10:00 AM</div>
+          <div class="activity">Bridesmaids and Groomsmen final preparations</div>
+        </div>
+        <div class="timeline-item">
+          <div class="time">11:00 AM</div>
+          <div class="activity">Break time & resting</div>
+        </div>
+        <div class="timeline-item">
+          <div class="time">12:00 PM</div>
+          <div class="activity">Departure to church</div>
+        </div>
+      </div>
+
+      <ul>
+        <li><span class="icon">🏠</span> <span><strong>Preparation Venue:</strong> The Cliff Mansion, Tagaytay</span></li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://maps.app.goo.gl/wqBG3xgc46ztHhZd6" class="btn-link" target="_blank">📍 Google Maps</a>
+        <a href="https://www.waze.com/en/live-map/directions/ph/calabarzon/tagaytay-city/the-cliff-mansion-tagaytay?place=ChIJHWJZ4EF5vTMRx_FfiHXgMuo" class="btn-link" target="_blank">🚗 Waze</a>
+      </div>
+      
+      <ul>
+        <li><span class="icon">📱</span> <span><strong>Bring fully charged phones and portable chargers</strong> for capturing all the amazing moments - except during the wedding ceremony.</span></li>
+        <li><span class="icon">📸</span> <span><strong>Be camera-ready all day</strong> - We'll have spontaneous photos and professional shoots throughout the event.</span></li>
+        <li><span class="icon">🚫</span> <span><strong>No phone use during the ceremony</strong> - Let's keep this moment sacred and distraction-free.</span></li>
+        <li><span class="icon">🎭</span> <span><strong>Bring your best energy</strong> for the TikTok entrances and group activities!</span></li>
+      </ul>
+    </section>
+
+    <section class="bridesmaids">
+      <h3>👗 Bridesmaids Instructions</h3>
+      
+      <h4 style="color: #a67c52; margin-top: 30px;">👗 Dress & Appearance</h4>
+      <ul>
+        <li><span class="icon">👗</span> <span><strong>Final dress fitting:</strong> Complete at least one week before the wedding. Ensure it fits perfectly and is ready to wear.</span></li>
+        <li><span class="icon">👠</span> <span><strong>Footwear:</strong> Bring comfortable shoes for walking and dancing. Consider the outdoor venue and grass areas.</span></li>
+        <li><span class="icon">💄</span> <span><strong>Hair & Makeup Service:</strong> Available on-site for ₱2,000. Please confirm your booking at least 3 days before the wedding if interested.</span></li>
+        <li><span class="icon">💅</span> <span><strong>If doing your own makeup:</strong> Bring touch-up essentials and ensure it's long-lasting for the full day.</span></li>
+      </ul>
+
+      <h4 style="color: #a67c52; margin-top: 30px;">⏰ Day-of Schedule</h4>
+      <ul>
+        <li><span class="icon">🌅</span> <span><strong>5:00 AM:</strong> Arrive at the venue (don't be late!)</span></li>
+        <li><span class="icon">📸</span> <span><strong>6:00 AM:</strong> Pre-wedding photo shoot begins</span></li>
+        <li><span class="icon">💄</span> <span><strong>10:00 AM:</strong> Final touch-ups and dress-up time</span></li>
+      </ul>
+
+      <h4 style="color: #a67c52; margin-top: 30px;">✨ Special Reminders</h4>
+      <ul>
+        <li><span class="icon">💐</span> <span><strong>Bouquet handling:</strong> Hold at waist level during the ceremony. Handle with care and smile for the photographers!</span></li>
+        <li><span class="icon">🎶</span> <span><strong>TikTok entrance:</strong> Practice your moves! Bring grace, glam, and confidence!</span></li>
+        <li><span class="icon">🌟</span> <span><strong>You're in the spotlight:</strong> Smile bright and stay confident. These memories will last forever!</span></li>
+        <li><span class="icon">🤝</span> <span><strong>Support the bride:</strong> Be ready to assist Mikka with anything she needs throughout the day.</span></li>
+      </ul>
+    </section>
+
+    <section class="groomsmen">
+      <h3>🤵 Groomsmen Instructions</h3>
+      
+      <h4 style="color: #a67c52; margin-top: 30px;">👔 Attire Requirements</h4>
+      <ul>
+        <li><span class="icon">👔</span> <span><strong>Suit & Bowtie:</strong> Will be provided by us. No need to worry about this!</span></li>
+        <li><span class="icon">👕</span> <span><strong>White long-sleeve shirt:</strong> Please bring your own clean, well-fitted white dress shirt.</span></li>
+        <li><span class="icon">👞</span> <span><strong>Black formal shoes:</strong> Bring polished black dress shoes. Bring shoe polish for last-minute touch-ups.</span></li>
+        <li><span class="icon">🧦</span> <span><strong>Dark socks:</strong> Black or dark navy dress socks.</span></li>
+        <li><span class="icon">🎩</span> <span><strong>Final fitting:</strong> Schedule your suit fitting at least one week before the wedding.</span></li>
+      </ul>
+
+      <h4 style="color: #a67c52; margin-top: 30px;">🧼 Grooming</h4>
+      <ul>
+        <li><span class="icon">✂️</span> <span><strong>Haircut:</strong> Get a fresh cut 2-3 days before the wedding (not on the day of!).</span></li>
+        <li><span class="icon">🪒</span> <span><strong>Grooming:</strong> Light grooming before arrival. Look sharp and well-maintained.</span></li>
+        <li><span class="icon">🧴</span> <span><strong>Bring essentials:</strong> Cologne, comb, and any personal grooming items you might need.</span></li>
+      </ul>
+
+      <h4 style="color: #a67c52; margin-top: 30px;">⏰ Day-of Schedule</h4>
+      <ul>
+        <li><span class="icon">🌅</span> <span><strong>5:00 AM:</strong> Arrive at the venue sharp!</span></li>
+        <li><span class="icon">📸</span> <span><strong>6:00 AM:</strong> Join the pre-wedding photo shoot</span></li>
+        <li><span class="icon">🤵</span> <span><strong>10:00 AM:</strong> Final preparations and suit fitting</span></li>
+      </ul>
+
+      <h4 style="color: #a67c52; margin-top: 30px;">🎬 Special Reminders</h4>
+      <ul>
+        <li><span class="icon">🕺</span> <span><strong>TikTok entrance:</strong> Practice your moves! Smooth coordination and great energy expected!</span></li>
+        <li><span class="icon">💪</span> <span><strong>Come well-rested and hungry:</strong> Breakfast will be provided at 5:30 AM. It's going to be a long, exciting day!</span></li>
+        <li><span class="icon">🤝</span> <span><strong>Support the groom:</strong> Be ready to assist Kim and help with any last-minute needs.</span></li>
+        <li><span class="icon">📵</span> <span><strong>Phone etiquette:</strong> Keep phones on silent during the ceremony and be present in the moment.</span></li>
+        <li><span class="icon">🎉</span> <span><strong>Bring the fun:</strong> Your positive energy and support mean everything on this special day!</span></li>
+      </ul>
+    </section>
+
+    <section style="animation-delay: 0.8s;">
+      <h3>📞 Important Contacts</h3>
+      <ul>
+        <li><span class="icon">👰</span> <span><strong>Bride (Mikka):</strong> [Phone number] - For any questions or emergencies</span></li>
+        <li><span class="icon">🤵</span> <span><strong>Groom (Kim):</strong> [Phone number] - For any questions or emergencies</span></li>
+        <li><span class="icon">📋</span> <span><strong>Wedding Coordinator:</strong> [Phone number] - For day-of logistics</span></li>
+      </ul>
+      
+      <div class="final-reminders">
+        <div class="reminder-header">📝 Final Reminders</div>
+        <div class="reminder-grid">
+          <div class="reminder-item">
+            <div class="reminder-icon">👗</div>
+            <div class="reminder-text">Follow the dress code strictly</div>
+          </div>
+          <div class="reminder-item">
+            <div class="reminder-icon">⏰</div>
+            <div class="reminder-text">Arrive on time - punctuality is essential!</div>
+          </div>
+          <div class="reminder-item">
+            <div class="reminder-icon">✨</div>
+            <div class="reminder-text">Bring your best energy and brightest smiles</div>
+          </div>
+          <div class="reminder-item">
+            <div class="reminder-icon">💕</div>
+            <div class="reminder-text">Let's make this day absolutely unforgettable!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <a href="index.html" class="btn-back">← Back to Invitation</a>
+  </div>
+
+  <script>
+    // Create floating hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '♥';
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.animationDelay = Math.random() * 15 + 's';
+      heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
+      document.querySelector('.hearts').appendChild(heart);
+      
+      setTimeout(() => {
+        heart.remove();
+      }, 15000);
+    }
+
+    // Create hearts periodically
+    setInterval(createHeart, 3000);
+
+    // Add sparkle effect on hover
+    document.querySelectorAll('li, .btn-link, .btn-back').forEach(element => {
+      element.addEventListener('mouseenter', function(e) {
+        for (let i = 0; i < 5; i++) {
+          setTimeout(() => {
+            const sparkle = document.createElement('span');
+            sparkle.className = 'sparkle';
+            sparkle.innerHTML = '✨';
+            sparkle.style.left = (Math.random() * this.offsetWidth) + 'px';
+            sparkle.style.top = (Math.random() * this.offsetHeight) + 'px';
+            this.style.position = 'relative';
+            this.appendChild(sparkle);
+            
+            setTimeout(() => {
+              if (sparkle.parentNode) {
+                sparkle.remove();
+              }
+            }, 1000);
+          }, i * 100);
+        }
+      });
+    });
+
+    // Add staggered animations to sections
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section, index) => {
+      section.style.animationDelay = (index * 0.2) + 's';
+    });
+
+    // Smooth scroll enhancement
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
